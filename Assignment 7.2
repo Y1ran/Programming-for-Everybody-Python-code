@@ -1,0 +1,27 @@
+# Use the file name mbox-short.txt as the file name
+
+import math
+
+fname = raw_input("What is the name of file:")
+try:
+    
+    fh = open(fname)
+    
+except:
+    print "Please enter a valid file site"
+    exit()
+
+num = list()
+
+
+for line in fh.readlines():
+    if not line.startswith("X-DSPAM-Confidence:"): continue
+    s1 = line.find(":")
+    line = line[s1+1:]
+
+    value = float(line.strip())
+    num.append(value)
+
+    
+ave = sum(num)/len(num)
+print "Average spam confidence:",ave
