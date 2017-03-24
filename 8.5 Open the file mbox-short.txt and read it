@@ -1,0 +1,30 @@
+fname = raw_input("Enter file name: ")
+try:
+    if len(fname) < 1 : fname = "mbox-short.txt"
+except:
+    print "Please enter a valid file"
+    exit()
+    
+fh = open(fname)
+count = 0
+for line in fh.readlines():
+    if not line.startswith("From"): continue
+    if line.startswith("From:"): continue
+    line.strip()
+  
+    email = line.split()
+    
+    
+    email2 = email[1]
+
+
+
+
+    print email2
+        
+    count += 1
+
+    
+
+
+print "There were", count, "lines in the file with From as the first word"
