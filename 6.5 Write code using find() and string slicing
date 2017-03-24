@@ -1,0 +1,9 @@
+text = "X-DSPAM-Confidence:    0.8475"
+
+text1 = text.strip()
+S1 = text.find("0")
+
+Point = float(text[S1:])
+
+
+print Point
